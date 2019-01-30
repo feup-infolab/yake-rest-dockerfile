@@ -16,7 +16,7 @@ docker run -d feupinfolab/yake-rest:latest
 ## Testing
 
 ```bash
-curl http://127.0.0.1:7890/yake/v2/extract_keywords?max_ngram_size=3&number_of_keywords=30 \
+curl "http://127.0.0.1:7890/yake/v2/extract_keywords?max_ngram_size=3&number_of_keywords=30" \
   --header "Content-Type": "application/x-www-form-urlencoded" \
   --header "Accept: "application/json" \
   --request POST \
