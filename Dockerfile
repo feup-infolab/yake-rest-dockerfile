@@ -10,6 +10,10 @@ RUN apk update && apk upgrade && \
 
 RUN pip install flasgger
 
+# install requirements first to engage docker cache
+RUN wget https://raw.githubusercontent.com/feup-infolab/yake/master/requirements.txt -O requirements.txt
+RUN pip install -r requirements.txt
+
 # install yake via pip
 RUN pip install git+https://github.com/feup-infolab/yake.git
 

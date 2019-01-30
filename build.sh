@@ -33,6 +33,8 @@ function wait_for_server_to_boot_on_port()
     fi
 }
 
+## End aux functions
+
 if [ $# -eq 0 ]
   then
     tag='latest'
