@@ -1,5 +1,5 @@
 # yake-dockerfile
-Dockerfile for building an image of the [LIAAD/yake](https://github.com/LIAAD/yake) Keyword Extration Library as a REST API. 
+Dockerfile for building an image of the [LIAAD/yake](https://github.com/LIAAD/yake) Keyword Extration Library as a REST API.
 
 It mirrors the original application available [here](https://boiling-castle-88317.herokuapp.com).
 
@@ -20,7 +20,7 @@ curl "http://127.0.0.1:7890/yake/v2/extract_keywords?max_ngram_size=3&number_of_
   --header "Content-Type": "application/x-www-form-urlencoded" \
   --header "Accept: "application/json" \
   --request POST \
-  --data '{"content":"Caffeine is a central nervous system (CNS) stimulant of the methylxanthine class.[10] It is the world's most widely consumed psychoactive drug. Unlike many other psychoactive substances, it is legal and unregulated in nearly all parts of the world. There are several known mechanisms of action to explain the effects of caffeine. The most prominent is that it reversibly blocks the action of adenosine on its receptor and consequently prevents the onset of drowsiness induced by adenosine. Caffeine also stimulates certain portions of the autonomic nervous system."}'
+  --data '{\"content\":\"Caffeine is a central nervous system (CNS) stimulant of the methylxanthine class.[10] It is the world\'s most widely consumed psychoactive drug. Unlike many other psychoactive substances, it is legal and unregulated in nearly all parts of the world. There are several known mechanisms of action to explain the effects of caffeine. The most prominent is that it reversibly blocks the action of adenosine on its receptor and consequently prevents the onset of drowsiness induced by adenosine. Caffeine also stimulates certain portions of the autonomic nervous system.\"}'"
 ```
 __(Text from wikipedia)__
 
@@ -54,5 +54,3 @@ Proceedings of the 40th European Conference on Information Retrieval (ECIR'18), 
 Campos, R., Mangaravite, V., Pasquali, A., Jorge, A., Nunes, C., & Jatowt, A. (2018).
 YAKE! Collection-independent Automatic Keyword Extractor
 Proceedings of the 40th European Conference on Information Retrieval (ECIR'18), Grenoble, France. March 26 – 29
-
-

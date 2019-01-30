@@ -1,10 +1,24 @@
-FROM feup-infolab/yake:latest
+FROM library/python:3.7.1-alpine
 
 # change to temp dir
 WORKDIR /temp
 
+# install git and build-base (GCC, etc.)
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh && \
+    apk add build-base
+
 RUN pip install flasgger
-RUN wget https://gist.githubusercontent.com/arianpasquali/16b2b0ab2095ee35dbede4dd2f4f8520/raw/ba4ea7da0d958fc4b1b2e694f45f17cc71d8238d/yake_rest_api.py
+
+# install yake via pip
+RUN pip install git+https://github.com/feup-infolab/yake.git
+
+# Copy server startup script
+COPY ./yake_rest_api.py /temp
+
+# Expose server port
+ENV SERVER_PORT 5000
+EXPOSE "$SERVER_PORT"
 
 # set default command
-CMD ["python yake_rest_api.py"]
+CMD [ "python", "yake_rest_api.py" ]
